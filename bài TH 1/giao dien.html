@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hồ sơ cá nhân - Kiều Việt Hưng</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            margin: 0;
+            color: #333;
+        }
+
+        nav {
+            background-color: #1e3a5f;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: #dceeff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 25px auto;
+        }
+
+        section, aside {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            margin: 15px auto;
+        }
+
+        ul, ol {
+            line-height: 1.8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #dceeff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            width: 120px;
+            padding: 10px;
+            background-color: #1e3a5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2d5d91;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e3a5f;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Thanh điều hướng -->
+    <nav>
+        <a href="#gioi-thieu">Giới thiệu</a>
+        <a href="#ky-nang">Kỹ năng</a>
+        <a href="#hoc-tap">Học tập</a>
+        <a href="#lien-he">Liên hệ</a>
+    </nav>
+
+    <!-- Tiêu đề chính -->
+    <header>
+        <h1>HỒ SƠ CÁ NHÂN</h1>
+        <p>Chào mừng bạn đến với trang hồ sơ cá nhân của tôi!</p>
+    </header>
+
+    <main>
+
+        <!-- Section 1 -->
+        <section id="gioi-thieu">
+            <h2>Giới thiệu bản thân</h2>
+
+            <img src="avatar.jpg" alt="Ảnh đại diện cá nhân">
+
+            <p>
+                Xin chào! Tôi là <strong>Kiều Việt Hưng</strong>,
+                một <span style="color: blue;">sinh viên yêu thích công nghệ</span>.
+                Tôi đặc biệt quan tâm đến <b>lập trình</b> và
+                <i>trí tuệ nhân tạo</i>.
+                Tôi luôn cố gắng <u>học hỏi những kiến thức mới</u>
+                và <small>trau dồi kỹ năng mỗi ngày</small>.
+            </p>
+
+            <p>
+                Một số liên kết yêu thích:
+                <a href="https://github.com/" target="_blank">GitHub</a> |
+                <a href="https://www.google.com/" target="_blank">Google</a> |
+                <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+            </p>
+
+            <h3>Sở thích</h3>
+            <p>
+                Tôi thích lập trình, chơi game, tìm hiểu công nghệ
+                , đọc truyện, nghe nhạc và học hỏi những điều mới.
+            </p>
+
+            <!-- Video -->
+            <video width="500" controls>
+                <source src="video.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </section>
+
+
+        <!-- Section 2 -->
+        <section id="ky-nang">
+            <h2>Kỹ năng</h2>
+
+            <ul>
+                <li>Lập trình Python</li>
+                <li>HTML và CSS</li>
+                <li>Tư duy giải quyết vấn đề</li>
+                <li>Làm việc nhóm</li>
+            </ul>
+        </section>
+
+
+        <!-- Section 3 -->
+        <section id="hoc-tap">
+            <h2>Quá trình học tập</h2>
+
+            <ol>
+                <li>Học tập tại trường THPT</li>
+                <li>Tìm hiểu lập trình cơ bản</li>
+                <li>Học HTML và CSS</li>
+                <li>Tìm hiểu Python</li>
+                <li>Học tập và nghiên cứu về AI</li>
+            </ol>
+
+            <h3>Thông tin học tập</h3>
+
+            <table>
+                <tr>
+                    <th>Năm</th>
+                    <th>Nội dung</th>
+                    <th>Kết quả</th>
+                </tr>
+
+                <tr>
+                    <td>2023</td>
+                    <td>Học THPT</td>
+                    <td>Tốt</td>
+                </tr>
+
+                <tr>
+                    <td>2024</td>
+                    <td>Học lập trình</td>
+                    <td>Khá</td>
+                </tr>
+
+                <tr>
+                    <td>2025</td>
+                    <td>Tìm hiểu AI</td>
+                    <td>Tốt</td>
+                </tr>
+            </table>
+        </section>
+
+
+        <!-- Aside -->
+        <aside>
+            <h2>Thông tin thêm</h2>
+            <p><strong>Mục tiêu:</strong> Trở thành một lập trình viên giỏi.</p>
+            <p><strong>Lĩnh vực quan tâm:</strong> AI, Machine Learning và Data.</p>
+        </aside>
+
+
+        <!-- Form liên hệ -->
+        <section id="lien-he">
+            <h2>Liên hệ</h2>
+
+            <form>
+
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Nhập họ và tên">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Nhập email">
+
+                <label for="subject">Chủ đề:</label>
+                <select id="subject" name="subject">
+                    <option value="question">Hỏi đáp</option>
+                    <option value="feedback">Góp ý</option>
+                    <option value="cooperation">Hợp tác</option>
+                </select>
+
+                <label for="message">Nội dung:</label>
+                <textarea id="message" name="message"
+                          placeholder="Nhập nội dung liên hệ"></textarea>
+
+                <button type="submit">Gửi liên hệ</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Hồ sơ cá nhân</p>
+    </footer>
+
+</body>
+</html>
+```
