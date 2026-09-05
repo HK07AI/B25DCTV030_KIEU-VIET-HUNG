@@ -1,72 +1,70 @@
 // ======================================
-// BÀI THỰC HÀNH 1
-// Trang giới thiệu tương tác
+// BÀI THỰC HÀNH 1 - CẬP NHẬT
+// Kiều Việt Hưng
 // ======================================
 
-
 // --------------------------------------
-// 1. ĐỔI MÀU NỀN
-// Sử dụng addEventListener
+// 1. ĐỒNG HỒ THEO GIỜ HÀ NỘI CHẠY LIÊN TỤC & LỜI CHÀO
 // --------------------------------------
-
-const changeColorBtn = document.getElementById("changeColorBtn");
-
-changeColorBtn.addEventListener("click", function () {
-
-    // Tạo ngẫu nhiên một màu nền
-    const colors = [
-        "#f4f7fb",
-        "#fff4e6",
-        "#eef7ff",
-        "#f2fce9",
-        "#f8f0ff"
-    ];
-
-    const randomIndex = Math.floor(Math.random() * colors.length);
-
-    document.body.style.backgroundColor = colors[randomIndex];
-});
-
-
-// --------------------------------------
-// 2. LỜI CHÀO THEO BUỔI
-// Sử dụng đối tượng Date
-// --------------------------------------
-
 const greeting = document.getElementById("greeting");
 const currentTime = document.getElementById("currentTime");
 
-const now = new Date();
+function updateClockAndGreeting() {
+    const now = new Date();
 
-const hour = now.getHours();
-const minute = now.getMinutes();
+    // Lấy giờ hiện tại theo múi giờ Hà Nội (Asia/Bangkok)
+    const hanoiHour = parseInt(
+        now.toLocaleString("en-US", { timeZone: "Asia/Bangkok", hour: "numeric", hour12: false }),
+        10
+    );
 
-let message;
+    // Cập nhật lời chào linh hoạt theo giờ
+    let message = "";
+    if (hanoiHour >= 5 && hanoiHour < 12) {
+        message = "🌅 Chào buổi sáng, Kiều Việt Hưng!";
+    } else if (hanoiHour >= 12 && hanoiHour < 18) {
+        message = "☀️ Chào buổi chiều, Kiều Việt Hưng!";
+    } else {
+        message = "🌙 Chào buổi tối, Kiều Việt Hưng!";
+    }
+    greeting.innerText = message;
 
-if (hour >= 5 && hour < 12) {
-    message = "🌅 Chào buổi sáng, Kiều Việt Hưng!";
+    // Định dạng chuỗi ngày - giờ chi tiết theo chuẩn giờ Hà Nội
+    const timeFormatter = new Intl.DateTimeFormat("vi-VN", {
+        timeZone: "Asia/Bangkok",
+        weekday: "long",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+    });
+
+    currentTime.innerText = "Giờ Hà Nội hiện tại: " + timeFormatter.format(now);
 }
-else if (hour >= 12 && hour < 18) {
-    message = "☀️ Chào buổi chiều, Kiều Việt Hưng!";
-}
-else {
-    message = "🌙 Chào buổi tối, Kiều Việt Hưng!";
-}
 
-// Thay đổi nội dung HTML bằng innerText
-greeting.innerText = message;
-
-currentTime.innerText =
-    "Thời gian hiện tại: " + now.toLocaleString("vi-VN");
+// Chạy ngay lập tức khi mở trang và lặp lại mỗi giây (1000ms)
+updateClockAndGreeting();
+setInterval(updateClockAndGreeting, 1000);
 
 
 // --------------------------------------
-// 3. THAO TÁC DOM
-// document.getElementById()
-// .innerText
-// .style
+// 2. CHUYỂN ĐỔI GIAO DIỆN SÁNG / TỐI (DARK / LIGHT MODE)
 // --------------------------------------
+const themeToggleBtn = document.getElementById("themeToggleBtn");
 
-// Ví dụ:
-// document.getElementById("greeting").innerText = "Xin chào!";
-// document.getElementById("greeting").style.color = "red";
+themeToggleBtn.addEventListener("click", function () {
+    // Thêm hoặc gỡ class 'dark-theme' trên body
+    document.body.classList.toggle("dark-theme");
+
+    const isDark = document.body.classList.contains("dark-theme");
+
+    // Cập nhật nhãn và biểu tượng nút bấm
+    if (isDark) {
+        themeToggleBtn.innerText = "☀️ Chế độ sáng";
+    } else {
+        themeToggleBtn.innerText = "🌙 Chế độ tối";
+    }
+});
